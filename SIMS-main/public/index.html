@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl font-bold text-blue-700 text-center mb-8 drop-shadow-sm">Student Information Management
+            System</h1>
+
+        <form id="studentForm"
+            class="grid grid-cols-3 gap-4 bg-white p-6 rounded-2xl shadow-lg border border-gray-200 mb-8">
+            <h2 class="col-span-3 text-xl font-semibold text-blue-800 mb-2">Add New Student</h2>
+
+            <input type="text" id="studentID" placeholder="Student ID"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <input type="text" id="fullName" placeholder="Full Name"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <select id="gender"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <input type="email" id="gmail" placeholder="Gmail"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <select id="program"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                <option value="">Select Program</option>
+            </select>
+
+            <input type="text" id="yearLevel" placeholder="Year Level (1–6)"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <input type="text" id="university" placeholder="University"
+                class="border-gray-300 border p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none col-span-2">
+
+            <button type="submit"
+                class="col-span-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-200">Add
+                Student</button>
+        </form>
+
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+            <input type="text" id="searchInput" placeholder="Search by name..."
+                class="border-gray-300 border rounded px-3 py-2 w-1/3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <select id="filterProgram"
+                class="border-gray-300 border rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                <option value="">All Programs</option>
+            </select>
+            <select id="filterGender"
+                class="border-gray-300 border rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                <option value="">All Genders</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <select id="limitSelect"
+                class="border-gray-300 border rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                <option value="20">Show 20</option>
+                <option value="50" selected>Show 50</option>
+                <option value="100">Show 100</option>
+            </select>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-2xl shadow-lg border border-gray-200">
+            <table class="min-w-full border rounded-lg overflow-hidden">
+                <thead class="bg-blue-700 text-white">
+                    <tr>
+                        <th class="py-2 px-4 border">ID</th>
+                        <th class="py-2 px-4 border">Name</th>
+                        <th class="py-2 px-4 border">Gender</th>
+                        <th class="py-2 px-4 border">Gmail</th>
+                        <th class="py-2 px-4 border">Program</th>
+                        <th class="py-2 px-4 border">Year</th>
+                        <th class="py-2 px-4 border">University</th>
+                        <th class="py-2 px-4 border">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
